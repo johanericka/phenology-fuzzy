@@ -51,3 +51,9 @@ Existing `.gitignore` was already modified before this initialization and was no
 Run an artifact audit: inspect dependency environment, execute a small reproducibility smoke test if safe, inventory existing outputs, and produce `05_experiments/analysis/artifact-audit.md`.
 
 After artifact audit, run RAG-first SOTA/gap validation before locking manuscript claims.
+
+## Artifact Audit
+
+2026-06-03: Ran the first artifact audit after research-assistant initialization. Verified Python/package availability, confirmed `main.py --help`, and executed a successful smoke test with `python3 main.py --test --no-plots`. Created `05_experiments/analysis/artifact-audit.md` and updated `05_experiments/analysis/results-summary.md` plus `05_experiments/plans/current-plan.md`.
+
+Important boundary: current `output/` files reflect the smoke test, not a full reproducibility evaluation. They verify pipeline functionality only. Do not use them for final water-saving, yield, IWUE, or statistical claims. Next recommended action is a bounded full-window `final-evaluation` reproducibility run, followed by RAG-first SOTA/gap validation.

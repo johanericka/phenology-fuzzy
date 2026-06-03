@@ -1,8 +1,10 @@
 # Current Experiment Plan
 
+Last updated: 2026-06-03
+
 ## Current Status
 
-Existing code is present and appears to support a reproducibility package and sensitivity checks. The first research-assistant task is to audit what the code actually runs and what output artifacts already exist.
+The repository is runnable. A smoke test completed successfully, and the available metric families have been audited in `05_experiments/analysis/artifact-audit.md`.
 
 ## Canonical Commands From README
 
@@ -18,19 +20,32 @@ Sensitivity checks:
 python scripts/run_sensitivity_checks.py --with-aquacrop
 ```
 
-## Planned Audit
+## Completed Audit Step
 
-1. Verify Python environment and dependencies.
-2. Run a small smoke test if available.
-3. Inventory existing `output/` artifacts without treating them as final until checked.
-4. Identify metrics produced by the pipeline.
-5. Map each metric to manuscript-safe claims.
+Smoke test command:
 
-## Candidate Metrics
+```bash
+python3 main.py --test --no-plots
+```
+
+Result: completed successfully. Current `output/` files are smoke-test artifacts and should be regenerated before manuscript use.
+
+## Next Execution Decision
+
+Recommended next run:
+
+```bash
+python3 main.py --reproducibility-pack   --reproducibility-start-year 2015   --reproducibility-end-year 2024   --experiment-mode final-evaluation
+```
+
+Use `--experiment-mode all` only if full tuning, final evaluation, attribution, and sensitivity outputs are desired in one run.
+
+## Candidate Metrics For Final Analysis
 
 - Total irrigation water use (IWU).
 - Irrigation event count and depth.
 - Target-band violation days, cumulative violation, and maximum violation.
 - Yield or yield proxy if supported by AquaCrop/output artifacts.
-- IWUE or water productivity if yield and water use are available.
+- IWUE or water productivity, after investigating `NaN` behavior in low-irrigation cases.
 - Seasonal robustness by MT-1, MT-2, and MT-3.
+- Phenology-specific diagnostics for reproductive, flowering, and grain-filling stages.
