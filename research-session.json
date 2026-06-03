@@ -1,0 +1,37 @@
+{
+  "session_name": "phenology-fuzzy",
+  "workspace_root": "/home/johanericka/phenology-fuzzy",
+  "current_phase": "Existing runnable simulation repository initialized as a structured research-assistant workspace.",
+  "research_topic": "Phenology-aware fuzzy irrigation control for paddy rice using dynamic growth-stage soil-moisture target bands and weather-driven closed-loop simulation.",
+  "selected_subtopic": "Phenology-aware fuzzy irrigation controller versus static/reactive baselines under BMKG weather forcing.",
+  "selected_gap": "Pending literature verification: most irrigation controllers and static-threshold baselines do not explicitly evaluate dynamic phenology-specific soil-moisture target bands for paddy rice in a reproducible AquaCrop/water-balance simulation workflow.",
+  "intake_decisions": {
+    "project_type": "existing-artifact research project",
+    "canonical_code_location": "repository root, especially main.py and src/",
+    "data_sources": [
+      "data/cuaca-complete.txt",
+      "data/paddy_growth_phenology.csv"
+    ],
+    "reproducibility_command": "python main.py --reproducibility-pack --reproducibility-start-year 2015 --reproducibility-end-year 2024 --experiment-mode all",
+    "sensitivity_command": "python scripts/run_sensitivity_checks.py --with-aquacrop",
+    "language_policy": "Bahasa Indonesia for coordination; English for manuscript-facing artifacts."
+  },
+  "persistent_memory": {
+    "enabled": true,
+    "entrypoint": "00_memory/START_HERE.md",
+    "global_context": "00_memory/global-context.md",
+    "researcher_style": "00_memory/researcher-style.md",
+    "memory_index": "00_memory/memory-index.yaml",
+    "coordinator_summary": "08_logs/coordinator-summary.md",
+    "rag_toolkit": "/home/johanericka/RAG",
+    "rag_collection": "research_papers_v1",
+    "rag_query_command": "python /home/johanericka/RAG/rag_ask.py \"QUESTION\" --collection research_papers_v1 --top-k 6",
+    "rag_ingest_command": "python /home/johanericka/RAG/rag_ingest_pdf.py PDF_PATH --collection research_papers_v1 --tags \"rice,irrigation,phenology,fuzzy-control,aquacrop\""
+  },
+  "open_decisions": [
+    "Confirm manuscript contribution framing.",
+    "Audit reproducibility outputs and metrics.",
+    "Verify SOTA/gap against local RAG and full papers.",
+    "Decide target journal shortlist."
+  ]
+}

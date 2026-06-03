@@ -1,0 +1,26 @@
+workspace_root: /home/johanericka/phenology-fuzzy
+entrypoint: 00_memory/START_HERE.md
+global_context: 00_memory/global-context.md
+researcher_style: 00_memory/researcher-style.md
+session_manifest: research-session.json
+coordinator_summary: 08_logs/coordinator-summary.md
+phase_guides:
+  topic: 01_topic/topic.md
+  literature: 02_literature/literature.md
+  subtopics: 03_subtopics/subtopics.md
+  gaps: 04_gaps/gaps.md
+  selected_gap: 04_gaps/selected-gap.md
+  experiment_plan: 05_experiments/plans/current-plan.md
+  results_summary: 05_experiments/analysis/results-summary.md
+  contribution_statement: 06_manuscript/contribution-statement.md
+  manuscript_plan: 06_manuscript/manuscript.md
+  coordinator: 08_logs/coordinator-summary.md
+canonical_code:
+  main_entrypoint: main.py
+  config: src/config.py
+  simulation_engine: src/simulation.py
+  fuzzy_controller: src/fuzzy_controller.py
+  aquacrop_bridge: src/aquacrop_bridge.py
+canonical_data:
+  weather: data/cuaca-complete.txt
+  phenology: data/paddy_growth_phenology.csv
